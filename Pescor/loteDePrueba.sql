@@ -2,6 +2,7 @@ USE Pescore;
 TRUNCATE TABLE `competencia_categoria`;
 TRUNCATE TABLE `competencia_club`;
 TRUNCATE TABLE `competencia_participante`;
+TRUNCATE TABLE `competencia_especialidad`;
 
 #CATEGORIAS
 INSERT INTO `competencia_categoria`(`nombre`) VALUES ("Seniors");
@@ -31,3 +32,11 @@ INSERT INTO
 `competencia_participante`(`nombre`, `apellido`, 
 	`fechaNacimiento`, `categoria_id`, `club_id`) 
 VALUES ("Lauatro","Navarro","1998/2/2",3,3);
+
+#ESPECIALIDADES
+INSERT INTO `competencia_especialidad`( `nombre`, `descripcion`) 
+VALUES ("Pulso","Modalidad sin boya");
+INSERT INTO `competencia_especialidad`( `nombre`, `descripcion`) 
+VALUES ("Libre","Modalidad con o sin boya");
+INSERT INTO `competencia_especialidad`( `nombre`, `descripcion`) 
+VALUES ("Balancin","Modalidad con boya obligatoria y en uso");
