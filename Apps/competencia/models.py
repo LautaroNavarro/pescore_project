@@ -34,6 +34,8 @@ class Campeonato (models.Model):
 	cantidadPescadores = models.IntegerField()
 	cantidadClubes = models.IntegerField()
 	participantes = models.ManyToManyField(Participante)
+	def __str__(self):
+		return self.nombre
 	def getRankingGeneralIndividual():
 		return null
 	def getRankingGeneralClub():
@@ -44,7 +46,8 @@ class Torneo (models.Model):
 	campeonato = models.ForeignKey(Campeonato, null = False, blank = False, on_delete = models.CASCADE)
 	especialidad = models.ForeignKey(Especialidad, null = False, blank = False, on_delete = models.CASCADE)
 	club = models.ForeignKey(Club, null = False, blank = False, on_delete = models.CASCADE)
-	
+	def __str__(self):
+		return self.campeonato.nombre + " " + self.fecha.strftime('%m/%d/%Y')
 	def getRankingIndividual():
 		return null
 	def getRankingClub():
