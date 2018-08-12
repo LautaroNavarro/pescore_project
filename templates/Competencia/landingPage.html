@@ -1,0 +1,97 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Pescore
+{% endblock %}
+{% block content %}
+{% load staticfiles %}
+  <!-- Content -->
+  <div id="fondo" >
+    <div class="dark-overlay" >
+      <div class="container">
+        <!-- HEADER -->
+        <div class="row" id="intro-text">
+          <div class="col-5 text-center border-width-5 border-right border-light">
+            <img src="{% static 'img/logo-white.png' %}" class="w-75 mt-5 mb-5">
+          </div>
+          <div class="col-7 text-center">
+            <div class="pt-r">
+              <p class="text-white pescore-title mb-0">Pescore</p>
+              <p class="text-white pescore-slogan mt-0">Competencias de Pesca</p>
+              <a href="" class="btn btn-outline-light">COMENZAR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="row bg-white ">
+        <div class="col-3"></div>
+        <div class="col-6 mt-5 mb-5 text-center"> 
+          <p class="pescore-slogan mt-5 mb-5">Facilidad de uso</p>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="E6E7E8">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-6 mt-5 mb-5">
+          <p class="pescore-slogan">Compatibilidad</p>
+        </div>
+        <div class="col-6 mt-5 mb-5 "> 
+          <p class="pescore-slogan">Confiabilidad</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="fondo-dos" >
+    <div class="dark-overlay" >
+      <div class="container">
+        <!-- HEADER -->
+        <div class="row" id="intro-text">
+          <div class="col-7 text-center border-width-5 border-right border-light">
+            <div class="pt-r">
+              <p class="text-white pescore-title mb-0">No pierdas tiempo</p>
+              <p class="text-white pescore-slogan mt-0">Con conteos</p>
+              <a href="" class="btn btn-outline-light">Competir Ahora</a>
+            </div>
+          </div>
+          <div class="col-5 text-center ">
+            <img src="{% static 'img/logo-white.png' %}" class="w-75 mt-5 mb-5">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="O1A1A5">
+    <div class="container">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 mt-5 mb-5 text-center"> 
+          <p class="pescore-slogan mt-5 mb-5">Velocidad</p>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="A9ABAE">
+    <div class="container">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 mt-5 mb-5 text-center"> 
+          <p class="pescore-slogan mt-5 mb-5">Eficiencia</p>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Content -->
+
+{% endblock %}

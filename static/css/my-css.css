@@ -1,0 +1,58 @@
+
+*{
+	font-style:  'Raleway', sans-serif;
+}
+
+#fondo{
+	background-image: url("../img/fondo-uno.jpg");
+	background-size: cover;
+	min-height: 100vh;
+	background-attachment: fixed;
+}
+#fondo-dos{
+	background-image: url("../img/fondo-dos.jpg");
+	background-size: cover;
+	min-height: 100vh;
+	background-attachment: fixed;
+}
+.dark-overlay{
+	background-color: rgba(0,0,0,0.4);
+	min-height: 100vh;
+}
+footer{
+	background-color: rgb(40,44,47);
+}
+footer {
+	color:white;
+}
+footer a{
+	color: rgb(1 ,161 ,165);
+}
+#intro-text {
+    padding-top: 17vh;
+    padding-bottom: 10vh;
+    text-align: center;
+}
+.border-width-5{
+	border-right-width: 10px;
+}
+.pt-r{
+	padding-top: 5vh;
+
+}
+.pescore-title{
+	font-size: 6vw;
+}
+.pescore-slogan{
+	font-size: 	5vh;
+}
+.O1A1A5{
+	background-color: #01A1A5;
+	color: white;
+}
+.A9ABAE{
+	background-color: #A9ABAE;
+}
+.E6E7E8{
+	background-color: #E6E7E8;
+}

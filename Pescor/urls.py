@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from Apps.competencia.views import LandingPage
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('landingPage/',LandingPage),
 ]
