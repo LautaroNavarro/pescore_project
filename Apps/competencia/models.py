@@ -21,13 +21,12 @@ class Participante (models.Model):
 	def __str__(self):
 		return self.nombre + " " + self.apellido
 
-
-
 class Especialidad (models.Model):
 	nombre = models.CharField(max_length = 50)
 	descripcion = models.TextField()
 	def __str__(self):
 		return self.nombre
+
 class Campeonato (models.Model):
 	fecha = models.DateField()
 	nombre = models.CharField(max_length = 50)
@@ -52,11 +51,12 @@ class Torneo (models.Model):
 		return null
 	def getRankingClub():
 		return null
+		
 class Tarjeta (models.Model):
 	cantidad = models.IntegerField()
 	peso = 	models.FloatField()
-	hora = 	models.TimeField()
-	puntaje = models.FloatField()
+	hora = 	models.TimeField(blank = True)
+	puntaje = models.FloatField( blank = True)
 	torneo = models.ForeignKey(Torneo, null = False, blank = False, on_delete = models.CASCADE)
 	participante = models.ForeignKey(Participante, null = False, blank = False, on_delete = models.CASCADE)
 	def __str__(self):
