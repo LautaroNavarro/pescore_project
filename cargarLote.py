@@ -19,7 +19,7 @@ consultas = ["USE Pescore;",
 "INSERT INTO `competencia_club`(`nombre`, `abreviacion`) VALUES ('Rivadavia','RIV');",
 "INSERT INTO `competencia_club`(`nombre`, `abreviacion`) VALUES ('Medrano','MED');",
 
-"INSERT INTO `competencia_participante`(`nombre`,`apellido`, `fechaNacimiento`, `categoria_id`, `club_id`) VALUES ('Martin','Perez','1998/2/2',1,1);",
+"INSERT INTO `competencia_participante`(`nombre`,`apellido`, `fechaNacimiento`, `categoria_id`, `club_id`) VALUES ('Martin','Perez','1998/8/13',1,1);",
 "INSERT INTO `competencia_participante`(`nombre`, `apellido`, 	`fechaNacimiento`, `categoria_id`, `club_id`) VALUES ('Maximiliano','Sanchez','1998/2/2',2,2);",
 "INSERT INTO `competencia_participante`(`nombre`, `apellido`, 	`fechaNacimiento`, `categoria_id`, `club_id`) VALUES ('Lauatro','Navarro','1998/2/2',3,3);",
 

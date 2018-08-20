@@ -11,24 +11,54 @@ class ClubForm (forms.ModelForm):
 				   'abreviacion' : forms.TextInput(attrs = {'class' : 'form-control'}),
 		}
 
-class CategoriaForm (forms.Form):
-	nombre = forms.CharField(label = 'Nombre', max_length = 50)
+class CategoriaForm (forms.ModelForm):
 	class Meta:
 		model = Categoria
-
-class ParticipanteForm (forms.Form):
-	nombre = forms.CharField(label = 'Nombre', max_length = 50)
-	apellido = forms.CharField(label = 'Apellido', max_length = 50)
-	fechaNacimiento = forms.DateField(label = 'Fecha Nacimiento')
-	club = forms.ChoiceField(label = 'Club', choices = Club.objects.all())
+		fields = '__all__'
+		labels = {'nombre' : 'Nombre',
+				  }
+		widgets = {'nombre' : forms.TextInput(attrs = {'class' : 'form-control'}),
+		}
+class ParticipanteForm(forms.ModelForm):
 	class Meta:
 		model = Participante
+		fields = '__all__'
+		labels = {'nombre': 'Nombre',
+			      'apellido' : 'Apellido',
+				  'fechaNacimiento' : 'Fecha de Nacimiento',
+				  'club' : 'Club',
+				  'categoria' : 'Cateogoria',
+		}
+		widgets = {'nombre': forms.TextInput(attrs = {'class' : 'form-control'}),
+			      'apellido' : forms.TextInput(attrs = {'class' : 'form-control'}),
+				  'fechaNacimiento' : forms.TextInput( attrs = {'class' : 'form-control', 'type' : 'Date'}),
+				  'club' : forms.Select(attrs = {'class' : 'form-control'} ,choices = Club.objects.all()),
+				  'categoria' : forms.Select(attrs = {'class' : 'form-control'}, choices = Categoria.objects.all()),
+		}
 
-class EspecialidadForm (forms.Form):
-	nombre = forms.CharField(label = 'Nombre', max_length = 50)
-	nombre = forms.CharField(label = 'Nombre', max_length = 50)
+class EspecialidadForm (forms.ModelForm):
 	class Meta:
 		model = Especialidad
+		fields = '__all__'
+		labels = {'nombre' : 'Nombre',
+				  'descripcion' : 'Descripcion'}
+		widgets = {'nombre' : forms.TextInput(attrs = {'class' : 'form-control'}),
+				  'descripcion' : forms.TextInput(attrs = {'class' : 'form-control'})}
+
+# class CampeonatoForm (forms.ModelForm):
+# 	class Meta:
+# 		model = Campeonato
+# 		fields = '__all__'
+# 		labels = {'fecha' : 'Fecha',
+# 				  'nombre' : 'Nombre',
+# 				  'cantidadPescadores' : 'Cantidad de pescadores',
+# 				  'cantidadClubes' : 'Cantidad de clubes',
+# 				  'participantes' : 'Participantes'}
+# 		widgets = {'fecha' : forms.DateInput(attr = {'class' : 'form-control'}),
+# 				  'nombre' : forms.TextInput(attr = {'class' : 'form-control'}),
+# 				  'cantidadPescadores' : forms.IntegerInput(),
+# 				  'cantidadClubes' : 'Cantidad de clubes',
+# 				  'participantes' : 'Participantes'}
 
 class CampeonatoForm (forms.Form):
 	fecha = forms.DateField(label = 'Fecha')

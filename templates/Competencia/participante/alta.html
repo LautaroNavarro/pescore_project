@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Alta Club
+{% endblock %}
+{% block content %}
+{% load staticfiles %}
+  <!-- Content -->
+  <div id="fondo" >
+    <div class="dark-overlay" >
+      <div class="container">
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p}}
+          <input type="submit" name="" class="btn btn-light">
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

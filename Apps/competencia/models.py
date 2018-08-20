@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
+from math import floor
 # Create your models here.
 class Club (models.Model):
 	nombre = models.CharField(max_length = 50)
@@ -18,6 +20,10 @@ class Participante (models.Model):
 	fechaNacimiento = 	models.DateField()
 	club = models.ForeignKey(Club, null = False, blank = False, on_delete = models.CASCADE)
 	categoria = models.ForeignKey(Categoria, null = False, blank = False, on_delete = models.CASCADE)
+	def getEdad(self):
+		hoy = date.today()
+		edad = floor(((hoy - self.fechaNacimiento).days) / 365)
+		return edad
 	def __str__(self):
 		return self.nombre + " " + self.apellido
 

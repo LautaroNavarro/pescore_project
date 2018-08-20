@@ -8,10 +8,10 @@ Alta Club
   <div id="fondo" >
     <div class="dark-overlay" >
       <div class="container">
-        <form class="form-group" method="POST">
+        <form method="POST">
           {% csrf_token %}
           {{ form.as_p}}
-          <input type="submit" name="" class="btn btn-success">
+          <input type="submit" name="" class="btn btn-light">
         </form>
       </div>
     </div>

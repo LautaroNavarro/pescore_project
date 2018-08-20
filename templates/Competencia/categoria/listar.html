@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Alta Club
+{% endblock %}
+{% block content %}
+{% load staticfiles %}
+ <!-- Content -->
+  <section id="fondo" >
+    <div class="dark-overlay" >
+      <div class="container ">
+        <!-- HEADER -->
+        <div class="row ">
+          <div class="col-12 text-center mt-4">
+            <p class="nombre-torneo text-white">Lista de Categorias</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <table class="table">
+              <thead class="thead-dark">
+                <th>Categoria</th>
+              </thead>
+              <tbody class="table-dark">
+                {% if object_list %}
+                {% for categoria in object_list %}
+                <tr>
+                  <td>{{categoria.nombre}}</td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <h1>Todavia no hay Categorias registrados</h1>
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
