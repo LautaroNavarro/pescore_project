@@ -45,29 +45,29 @@ class EspecialidadForm (forms.ModelForm):
 		widgets = {'nombre' : forms.TextInput(attrs = {'class' : 'form-control'}),
 				  'descripcion' : forms.TextInput(attrs = {'class' : 'form-control'})}
 
-# class CampeonatoForm (forms.ModelForm):
-# 	class Meta:
-# 		model = Campeonato
-# 		fields = '__all__'
-# 		labels = {'fecha' : 'Fecha',
-# 				  'nombre' : 'Nombre',
-# 				  'cantidadPescadores' : 'Cantidad de pescadores',
-# 				  'cantidadClubes' : 'Cantidad de clubes',
-# 				  'participantes' : 'Participantes'}
-# 		widgets = {'fecha' : forms.DateInput(attr = {'class' : 'form-control'}),
-# 				  'nombre' : forms.TextInput(attr = {'class' : 'form-control'}),
-# 				  'cantidadPescadores' : forms.IntegerInput(),
-# 				  'cantidadClubes' : 'Cantidad de clubes',
-# 				  'participantes' : 'Participantes'}
-
-class CampeonatoForm (forms.Form):
-	fecha = forms.DateField(label = 'Fecha')
-	nombre = forms.CharField(label = 'Nombre', max_length = 50)
-	cantidadPescadores = forms.IntegerField(label = 'Cantidad de Pescadores')
-	cantidadClubes = forms.IntegerField(label = 'Cantidad de Clubes')
-	participantes = forms.TypedMultipleChoiceField(label = 'Participantes', choices = Participante.objects.all())
+class CampeonatoForm (forms.ModelForm):
 	class Meta:
 		model = Campeonato
+		fields = '__all__'
+		labels = {'fecha' : 'Fecha',
+				  'nombre' : 'Nombre',
+				  'cantidadPescadores' : 'Cantidad de pescadores',
+				  'cantidadClubes' : 'Cantidad de clubes',
+				  'participantes' : 'Participantes'}
+		widgets = {'fecha' : forms.DateInput(attrs = {'class' : 'form-control', 'type' : 'date'}),
+				  'nombre' : forms.TextInput(attrs = {'class' : 'form-control'}),
+				  'cantidadPescadores' : forms.NumberInput(attrs = {'class' : 'form-control'}),
+				  'cantidadClubes' : forms.NumberInput(attrs = {'class' : 'form-control'}),
+				  'participantes' : forms.SelectMultiple(attrs = {'class' : 'form-control'})}
+
+# class CampeonatoForm (forms.Form):
+# 	fecha = forms.DateField(label = 'Fecha')
+# 	nombre = forms.CharField(label = 'Nombre', max_length = 50)
+# 	cantidadPescadores = forms.IntegerField(label = 'Cantidad de Pescadores')
+# 	cantidadClubes = forms.IntegerField(label = 'Cantidad de Clubes')
+# 	participantes = forms.TypedMultipleChoiceField(label = 'Participantes', choices = Participante.objects.all())
+# 	class Meta:
+# 		model = Campeonato
 
 class TorneoForm (forms.Form):
 	fecha = forms.DateField(label = 'Fecha')
