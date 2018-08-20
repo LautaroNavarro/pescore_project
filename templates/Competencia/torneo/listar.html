@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 {% block title %}
-Listar campeonatos
+Lista de Torneos
 {% endblock %}
 {% block content %}
 {% load staticfiles %}
@@ -11,31 +11,30 @@ Listar campeonatos
         <!-- HEADER -->
         <div class="row ">
           <div class="col-12 text-center mt-4">
-            <p class="nombre-torneo text-white">Lista de Campeonatos</p>
+            <p class="nombre-torneo text-white">Lista de Torneos</p>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
             <table class="table">
               <thead class="thead-dark">
-
-                <th>Nombre</th>
-                <th>Fecha</th>
-                <th>Cantidad de Pescadores</th>
-                <th>Cantidad de Clubes</th>
+                <th>fecha</th>
+                <th>campeonato</th>
+                <th>especialidad</th>
+                <th>club</th>
               </thead>
               <tbody class="table-dark">
                 {% if object_list %}
-                {% for campeonato in object_list %}
+                {% for torneo in object_list %}
                 <tr>
-                  <td>{{campeonato.nombre}}</td>
-                  <td>{{campeonato.fecha}}</td>
-                  <td>{{campeonato.cantidadPescadores}}</td>
-                  <td>{{campeonato.cantidadClubes}}</td>
+                  <td>{{torneo.fecha}}</td>
+                  <td>{{torneo.campeonato.nombre}}</td>
+                  <td>{{torneo.especialidad.nombre}}</td>
+                  <td>{{torneo.club.nombre}}</td>
                 </tr>
                 {% endfor %}
                 {% else %}
-                <h1>Todavia no hay Campeonatos registrados</h1>
+                <h1>Todavia no hay Torneos registrados</h1>
                 {% endif %}
               </tbody>
             </table>

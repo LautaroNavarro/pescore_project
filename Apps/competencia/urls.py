@@ -9,7 +9,9 @@ from Apps.competencia.views import (landingPage,
                                     ListarEspecialidades,
                                     AltaEspecialidad,
                                     ListarCampeonatos,
-                                    AltaCampeonato)
+                                    AltaCampeonato,
+                                    ListarTorneos,
+                                    AltaTorneo)
 
 app_name = 'competencia'
 urlpatterns = [
@@ -24,4 +26,6 @@ urlpatterns = [
     path('especialidad/alta/', AltaEspecialidad.as_view()),
     path('campeonato/listar/' , ListarCampeonatos.as_view()),
     path('campeonato/alta/', AltaCampeonato.as_view()),
+    path('torneo/listar/' , ListarTorneos.as_view()),
+    path('torneo/alta/', AltaTorneo.as_view()),
 ]

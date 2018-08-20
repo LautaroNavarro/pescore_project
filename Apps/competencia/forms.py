@@ -1,5 +1,5 @@
 from django import forms
-from Apps.competencia.models import Campeonato,Categoria,Club,Especialidad,Participante,Tarjeta, Torneo
+from Apps.competencia.models import Campeonato,Torneo,Categoria,Club,Especialidad,Participante,Tarjeta, Torneo
 class ClubForm (forms.ModelForm):
 	class Meta:
 		model = Club
@@ -60,22 +60,21 @@ class CampeonatoForm (forms.ModelForm):
 				  'cantidadClubes' : forms.NumberInput(attrs = {'class' : 'form-control'}),
 				  'participantes' : forms.SelectMultiple(attrs = {'class' : 'form-control'})}
 
-# class CampeonatoForm (forms.Form):
-# 	fecha = forms.DateField(label = 'Fecha')
-# 	nombre = forms.CharField(label = 'Nombre', max_length = 50)
-# 	cantidadPescadores = forms.IntegerField(label = 'Cantidad de Pescadores')
-# 	cantidadClubes = forms.IntegerField(label = 'Cantidad de Clubes')
-# 	participantes = forms.TypedMultipleChoiceField(label = 'Participantes', choices = Participante.objects.all())
-# 	class Meta:
-# 		model = Campeonato
 
-class TorneoForm (forms.Form):
-	fecha = forms.DateField(label = 'Fecha')
-	campeonato = forms.ChoiceField(label = 'Campeonato', choices = Campeonato.objects.all())
-	especilidad = forms.ChoiceField(label = 'Especialidad', choices = Especialidad.objects.all())
-	club = forms.ChoiceField(label = 'Club', choices = Club.objects.all())
+class TorneoForm (forms.ModelForm):
 	class Meta:
-		model = Campeonato
+		model = Torneo
+		fields = '__all__'
+		labels = {'fecha' : 'Fecha',
+				  'campeonato' : 'Campeonato',
+				  'especilidad' : 'Especialidad',
+				  'club' : 'Club'
+		}
+		widgets = {'fecha' : forms.DateInput(attrs = {'class' : 'form-control', 'type' : 'date'}),
+				  'campeonato' : forms.Select(attrs = {'class' : 'form-control'}),
+				  'especilidad' : forms.Select(attrs = {'class' : 'form-control'}),
+				  'club' : forms.Select(attrs = {'class' : 'form-control'}),
+		}
 
 class TarjetaForm (forms.Form):
 	cantidad = forms.IntegerField(label = 'Cantidad')
