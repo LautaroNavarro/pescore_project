@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 {% block title %}
-Lista de Participantes
+Lista de Tarjetas
 {% endblock %}
 {% block content %}
 {% load staticfiles %}
@@ -11,32 +11,34 @@ Lista de Participantes
         <!-- HEADER -->
         <div class="row ">
           <div class="col-12 text-center mt-4">
-            <h1 class="nombre-torneo text-white">Lista de Participante</h1>
+            <h1 class="nombre-torneo text-white">Lista de Tarjetas</h1>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
             <table class="table">
               <thead class="thead-dark">
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Edad</th>
-                <th>Club</th>
-                <th>Categoria</th>
+                <th>Cantidad</th>
+                <th>Peso</th>
+                <th>Hora</th>
+                <th>Puntaje</th>
+                <th>Torneo</th>
+                <th>Participante</th>
               </thead>
               <tbody class="table-dark">
                 {% if object_list %}
-                {% for participante in object_list %}
+                {% for tarjeta in object_list %}
                 <tr>
-                  <td>{{participante.nombre}}</td>
-                  <td>{{participante.apellido}}</td>
-                  <td>{{participante.getEdad}}</td>
-                  <td>{{participante.club}}</td>
-                  <td>{{participante.categoria}}</td>
+                  <td>{{tarjeta.cantidad}}</td>
+                  <td>{{tarjeta.peso}}</td>
+                  <td>{{tarjeta.hora}}</td>
+                  <td>{{tarjeta.puntaje}}</td>
+                  <td>{{tarjeta.torneo}}</td>
+                  <td>{{tarjeta.participante}}</td>                  
                 </tr>
                 {% endfor %}
                 {% else %}
-                <h1 class="text-white">Todavia no hay Participantes registrados</h1>
+                <h1 class="text-white">Todavia no hay Tarjetas registrados</h1>
                 {% endif %}
               </tbody>
             </table>

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView
-from Apps.competencia.models import Club,Torneo, Categoria, Participante, Especialidad, Campeonato
-from Apps.competencia.forms import ClubForm,TorneoForm, CategoriaForm, CampeonatoForm, ParticipanteForm, EspecialidadForm
+from Apps.competencia.models import Club,Torneo,Tarjeta, Categoria, Participante, Especialidad, Campeonato
+from Apps.competencia.forms import ClubForm,TorneoForm, TarjetaForm, CategoriaForm, CampeonatoForm, ParticipanteForm, EspecialidadForm
 from django.urls import reverse
 # Create your views here.
 def landingPage(request):
@@ -58,3 +58,11 @@ class AltaTorneo(CreateView):
 class ListarTorneos(ListView):
 	model = Torneo
 	template_name = 'Competencia/torneo/listar.html'
+class AltaTarjeta(CreateView):
+	model = Tarjeta
+	form_class = TarjetaForm
+	template_name = 'Competencia/tarjeta/alta.html'
+	success_url = '/tarjeta/listar/'
+class ListarTarjetas(ListView):
+	model = Tarjeta
+	template_name = 'Competencia/tarjeta/listar.html'

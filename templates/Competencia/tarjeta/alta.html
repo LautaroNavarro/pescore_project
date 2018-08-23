@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 {% block title %}
-Alta Especialidades
+Alta Tarjeta
 {% endblock %}
 {% block content %}
 {% load staticfiles %}
@@ -12,7 +12,7 @@ Alta Especialidades
           <div class="col-1"></div>
           <div class="col-10 ligth-underlay" >
             <form method="POST" class="p-3">
-              <h1>Registrar una Especialidad</h1>
+              <h1>Registrar una Tarjeta</h1>
               {% csrf_token %}
               {{ form.as_p}}
               <div class="text-center">

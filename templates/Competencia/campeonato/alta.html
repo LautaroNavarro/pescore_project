@@ -8,11 +8,20 @@ Alta Campeonato
   <div id="fondo" >
     <div class="dark-overlay" >
       <div class="container">
-        <form method="POST">
-          {% csrf_token %}
-          {{ form.as_p}}
-          <input type="submit" name="" class="btn btn-light">
-        </form>
+        <div class="row pt-3 pb-1">
+          <div class="col-1"></div>
+          <div class="col-10 ligth-underlay" >
+            <form method="POST" class="p-3">
+              <h1>Registrar una Campeonato</h1>
+              {% csrf_token %}
+              {{ form.as_p}}
+              <div class="text-center">
+                <input type="submit" name="" class="btn btn-light">
+              </div>
+            </form>
+          </div>
+          <div class="col-1"></div>
+        </div>
       </div>
     </div>
   </div>

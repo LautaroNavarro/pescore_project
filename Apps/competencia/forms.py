@@ -43,7 +43,7 @@ class EspecialidadForm (forms.ModelForm):
 		labels = {'nombre' : 'Nombre',
 				  'descripcion' : 'Descripcion'}
 		widgets = {'nombre' : forms.TextInput(attrs = {'class' : 'form-control'}),
-				  'descripcion' : forms.TextInput(attrs = {'class' : 'form-control'})}
+				  'descripcion' : forms.Textarea	(attrs = {'class' : 'form-control'})}
 
 class CampeonatoForm (forms.ModelForm):
 	class Meta:
@@ -76,12 +76,19 @@ class TorneoForm (forms.ModelForm):
 				  'club' : forms.Select(attrs = {'class' : 'form-control'}),
 		}
 
-class TarjetaForm (forms.Form):
-	cantidad = forms.IntegerField(label = 'Cantidad')
-	peso = forms.IntegerField(label = 'Peso')
-	hora = forms.TimeField(label = 'Hora')
-	torneo = forms.ChoiceField(label = 'Torneo', choices = Torneo.objects.all())
-	participante = forms.ChoiceField(label = 'Participante' , choices = Participante.objects.all())
+class TarjetaForm (forms.ModelForm):
 	class Meta:
 		model = Tarjeta
-
+		fields = '__all__'
+		labels = {'cantidad' : 'Cantidad',
+				  'peso' : 'Peso',
+				  'hora' : 'Hora',
+				  'torneo' : 'Torneo',
+				  'participante' : 'Participante',
+		}
+		widgets = {'cantidad' : forms.NumberInput(attrs = {'class' : 'form-control'}),
+				  'peso' : forms.NumberInput(attrs = {'class' : 'form-control'}),
+				  'hora' : forms.DateTimeInput(attrs = {'class' : 'form-control', 'placeholder' : '16:40'}),
+				  'torneo' : forms.Select(choices = Torneo.objects.all(), attrs = {'class' : 'form-control'}),
+				  'participante' : forms.Select(choices = Participante.objects.all(), attrs = {'class' : 'form-control'}),
+		}

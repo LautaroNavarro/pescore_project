@@ -51,6 +51,8 @@ class Torneo (models.Model):
 	campeonato = models.ForeignKey(Campeonato, null = False, blank = False, on_delete = models.CASCADE)
 	especialidad = models.ForeignKey(Especialidad, null = False, blank = False, on_delete = models.CASCADE)
 	club = models.ForeignKey(Club, null = False, blank = False, on_delete = models.CASCADE)
+	def getFecha(self):
+		return self.fecha.strftime('%d, %b %Y')
 	def __str__(self):
 		return self.campeonato.nombre + " " + self.fecha.strftime('%m/%d/%Y')
 	def getRankingIndividual():

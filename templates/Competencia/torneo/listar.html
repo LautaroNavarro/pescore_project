@@ -11,7 +11,7 @@ Lista de Torneos
         <!-- HEADER -->
         <div class="row ">
           <div class="col-12 text-center mt-4">
-            <p class="nombre-torneo text-white">Lista de Torneos</p>
+            <h1 class="nombre-torneo text-white">Lista de Torneos</h1>
           </div>
         </div>
         <div class="row">
@@ -27,14 +27,14 @@ Lista de Torneos
                 {% if object_list %}
                 {% for torneo in object_list %}
                 <tr>
-                  <td>{{torneo.fecha}}</td>
+                  <td>{{torneo.getFecha}}</td>
                   <td>{{torneo.campeonato.nombre}}</td>
                   <td>{{torneo.especialidad.nombre}}</td>
                   <td>{{torneo.club.nombre}}</td>
                 </tr>
                 {% endfor %}
                 {% else %}
-                <h1>Todavia no hay Torneos registrados</h1>
+                <h1 class="text-white">Todavia no hay Torneos registrados</h1>
                 {% endif %}
               </tbody>
             </table>
