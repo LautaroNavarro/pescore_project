@@ -77,11 +77,8 @@ WSGI_APPLICATION = 'Pescor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS' : { 'database' : 'Pescore',
-                 'user' : 'root',
-                 'password' : '',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db',
     }
 }
 
